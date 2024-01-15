@@ -1,5 +1,19 @@
 import cv2
 
+def convert_to_binary(image_path):
+
+    # Read the image and return a numpy array loaded with the image
+    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    cv2.imshow('Original Image', img)    # window_name, image
+    cv2.waitKey(0)
+
+    threshold_val, binary_img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)     # (img, threshold_val, max_val_to_pixel, how_threshold_is_applied)
+    cv2.imshow('Binary Image', binary_img)    # window_name, image
+    cv2.waitKey(0)
+
+    # Close all windows
+    cv2.destroyAllWindows()
+
 def rotate_image(image_path, rotation_angle):
     
     # Read the image and return a numpy array loaded with the image
@@ -25,3 +39,4 @@ rotation_angle = 45
 
 # Call the function
 rotate_image(image_path, rotation_angle)
+convert_to_binary(image_path)
