@@ -1,6 +1,6 @@
 import cv2
 
-def show_image(image_path):
+def subsample_image(image_path):
     
     # Read the image and return a numpy array loaded with the image
     img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
@@ -18,4 +18,4 @@ def show_image(image_path):
 image_path = r'C:\Users\sayan\Desktop\ETCE Eight Sem - Shortcut\DIP\DIP-assignments\Assignment 1\waterlilies.jpg'
 
 # Call the function
-show_image(image_path)
+subsample_image(image_path)
